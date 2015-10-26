@@ -1,8 +1,63 @@
 <html>
 <head>
-	<title></title>
+	<title>Responsive</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-
+	<header>
+		<h1>Responsive</h1>
+		<a onclick="show_menu('menu')" href="#">Menu</a>
+		<nav>
+			<ul id="menu">	
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+				<li>Item 4</li>
+				<li>Item 5</li>
+				<li>Item 6</li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<div class="left">
+			<img src="images/wifi.jpg"/>
+		</div>
+		<div class="right">
+			<img src="images/cat.jpg"/>
+		</div>
+	</section>
+	<article>
+		<h2>Title</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur pretium dui quis sodales. Pellentesque sagittis facilisis velit, eu posuere augue auctor a. Nam nunc lectus, ultricies eget magna sit amet, tristique finibus elit. Suspendisse pharetra dictum neque scelerisque dictum. Nulla ut velit sit amet justo fermentum sollicitudin ac accumsan urna. Fusce consequat nisi sit amet mauris rutrum, eu finibus nulla pulvinar. Quisque vel lectus risus. Aliquam ut velit in ante molestie finibus a ultrices ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent mattis eleifend ultricies. Aenean rutrum ornare odio, id faucibus velit lacinia sit amet. Sed imperdiet augue sed lectus vestibulum ultricies. Suspendisse potenti.</p>
+		<p>Proin molestie risus sed erat semper convallis. Fusce quis consectetur ex. Proin varius varius metus et mattis. Praesent ut ex consectetur, varius nibh non, semper ex. Fusce dapibus nibh at lacus sagittis, non lobortis libero tristique. Proin vitae mauris vel justo rhoncus ullamcorper at nec eros. Aenean lobortis dignissim enim, nec volutpat urna maximus eget. Mauris molestie lectus a libero faucibus finibus. Suspendisse potenti. Nunc fringilla mi ac eros dignissim, non sagittis elit lacinia. Donec pretium scelerisque turpis, eu consequat sem ornare id. Vivamus at enim vel felis sodales sodales. Proin quis ullamcorper nisl, eu faucibus libero. Integer ut ultricies mi, a interdum dui. Etiam blandit neque eget elementum gravida. Donec eget nunc ut libero consequat faucibus a vitae massa.</p>
+	</article>
 </body>
+ 
+<script type="text/javascript">
+
+	function show_menu(id) {
+		
+		var e = document.getElementById(id);
+		if(e.style.display == 'none'){
+			e.style.display = 'block';
+		}
+		else
+			e.style.display = 'none';
+		}
+
+	window.onresize = function(event) {
+		var menu = document.getElementById('menu')
+		if (event.currentTarget.outerWidth > 875){
+			menu.style.display = "block";
+			menu.childNodes.style.display = "inline-block"; //I was trying to use this line to fix the bug that is causing the stacked menu to display when resizing the screen.
+		}
+		else {
+			menu.style.display = "none"
+		}
+	}
+
+
+</script>
+
 </html>
